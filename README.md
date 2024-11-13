@@ -15,3 +15,17 @@ the function and run automatically when you commit through a GitHub action.
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+-----------------------------------------------------------------------------------------
+
+My complexity is $\Theta(V + E)$
+
+First I have two node based loops, both run in $V$ time
+
+then in the helper function I have a similar situation to that of my Augmenting Path algorithm, where I have a while loop that would at worst go through every single node followed by a for loop that at worst would go across every single edge, so $V + E$
+
+So $\Theta((V + E) + V + V)$ = $\Theta(3V + E)$
+
+ignoring constant values we get; $\Theta(V + E)$
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice

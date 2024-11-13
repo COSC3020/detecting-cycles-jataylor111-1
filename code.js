@@ -15,12 +15,12 @@ function hasCycle(graph) {
     let cycles = false;
 
     // Fill visited full of falses for seeing if a node has been seen or not
-    for (let i = 0; i < verts.length; i++) {
+    for (let i = 0; i < verts.length; i++) { // Length of nodes, complexity V
         // console.log("first hasCycle for");
         visited[i] = false;
     }
 
-    for(let j = 0; j < verts.length; j++) {
+    for(let j = 0; j < verts.length; j++) { // Length of nodes, complexity V
         // console.log("hasCycle for loop");
         if(!visited[j] && findCycle(graph, j, visited)) {
             // console.log("cycles = true");
@@ -38,7 +38,7 @@ function findCycle(graph, start, visited) {
     nodes.push(start);
 
     // Keep searching while we have a list of nodes to check
-    while(nodes.length > 0) {
+    while(nodes.length > 0) { // Iterates down the nodes, complexity V
         // console.log("findCycle while");
         let node = nodes.shift();
 
@@ -51,7 +51,7 @@ function findCycle(graph, start, visited) {
 
         visited[node] = true;
 
-        for(let node2 of graph[node]) {
+        for(let node2 of graph[node]) { // Going along the edges, complexity E
             if(!visited[node2]) {
                 // console.log("findCycle for loop node2");
                 nodes.push(node2);
